@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literacy Council Dashboard</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f9;
+        }
+
+        h1 {
+            background-color: #0077cc;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin: 0;
+        }
+
+        h2, h3 {
+            color: #2a2a2a;
+            margin: 1rem 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: 2rem auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        /* Bank Balance */
+        .bank-balance {
+            background-color: #0077cc;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        /* Grants Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: center;
+        }
+
+        th {
+            background-color: #0077cc;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Scrollable Calendar */
+        .calendar-container {
+            max-height: 400px;
+            overflow-y: scroll;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            background-color: #fafafa;
+        }
+
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .day {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 0.5rem;
+            border-radius: 4px;
+            height: 60px;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .event {
+            background-color: #ffeb3b;
+            color: #333;
+            padding: 2px 5px;
+            font-size: 0.8rem;
+            border-radius: 3px;
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+            right: 5px;
+            text-align: center;
+        }
+
+        /* Documents Section */
+        .documents {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .documents a {
+            display: block;
+            margin: 0.5rem 0;
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+        .documents a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Literacy Council Dashboard</h1>
+    <div class="container">
+
+        <!-- Bank Balance Section -->
+        <div class="section">
+            <h2>Bank Balance</h2>
+            <div class="bank-balance">
+                <strong>Current Bank Balance:</strong> $13,992.51
+            </div>
+        </div>
+
+        <!-- Grants Section -->
+        <div class="section">
+            <h2>Grants</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Grant Name</th>
+                        <th>Amount</th>
+                        <th>Deadline</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Community Impact Grant</td>
+                        <td>$5,000</td>
+                        <td>January 15, 2024</td>
+                        <td>Submitted</td>
+                    </tr>
+                    <tr>
+                        <td>Education Support Fund</td>
+                        <td>$10,000</td>
+                        <td>March 1, 2024</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr>
+                        <td>Local Development Grant</td>
+                        <td>$7,500</td>
+                        <td>April 30, 2024</td>
+                        <td>Draft</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Calendar Section -->
+        <div class="section">
+            <h2>12-Month Calendar</h2>
+            <div class="calendar-container">
+                <h3>January 2025</h3>
+                <div class="calendar">
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5<div class="event">Budget Meeting</div></div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+                    <div class="day">9<div class="event">Grant Deadline</div></div>
+                    <div class="day">10</div>
+                    <div class="day">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">15<div class="event">Budget Meeting</div></div>
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class="day">18</div>
+                    <div class="day">19<div class="event">Grant Deadline</div></div>
+                    <div class="day">20</div>
+                    <div class="day">21</div>
+                    <div class="day">22</div>
+                    <div class="day">23</div>
+                    <div class="day">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26<div class="event">Budget Meeting</div></div>
+                    <div class="day">27</div>
+                    <div class="day">28</div>
+                    <div class="day">29</div>
+                    <div class="day">30<div class="event">Grant Deadline</div></div>
+                    <div class="day">31</div>
+                </div>
+
+                <h3>February 2025</h3>
+                <div class="calendar">
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5<div class="event">Report Due</div></div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+                    <div class="day">9<div class="event">Grant Deadline</div></div>
+                    <div class="day">10</div>
+                    <div class="day">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">15<div class="event">Budget Meeting</div></div>
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class="day">18</div>
+                    <div class="day">19<div class="event">Grant Deadline</div></div>
+                    <div class="day">20</div>
+                    <div class="day">21</div>
+                    <div class="day">22</div>
+                    <div class="day">23</div>
+                    <div class="day">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26<div class="event">Budget Meeting</div></div>
+                    <div class="day">27</div>
+                    <div class="day">28</div>
+                </div>
+
+                <!-- Repeat for March to December -->
+                <h3>March 2025</h3>
+                <div class="calendar">
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5<div class="event">Fundraiser</div></div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+                    <div class="day">9<div class="event">Grant Deadline</div></div>
+                    <div class="day">10</div>
+                    <div class="day">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">15<div class="event">Budget Meeting</div></div>
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class="day">18</div>
+                    <div class="day">19<div class="event">Grant Deadline</div></div>
+                    <div class="day">20</div>
+                    <div class="day">21</div>
+                    <div class="day">22</div>
+                    <div class="day">23</div>
+                    <div class="day">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26<div class="event">Budget Meeting</div></div>
+                    <div class="day">27</div>
+                    <div class="day">28</div>
+                    <div class="day">29</div>
+                    <div class="day">30<div class="event">Grant Deadline</div></div>
+                    <div class="day">31</div>
+                </div>
+                <h3>April 2025</h3>
+                <div class="calendar">
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5<div class="event">Fundraiser</div></div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+                    <div class="day">9<div class="event">Grant Deadline</div></div>
+                    <div class="day">10</div>
+                    <div class="day">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">15<div class="event">Budget Meeting</div></div>
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class="day">18</div>
+                    <div class="day">19<div class="event">Grant Deadline</div></div>
+                    <div class="day">20</div>
+                    <div class="day">21</div>
+                    <div class="day">22</div>
+                    <div class="day">23</div>
+                    <div class="day">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26<div class="event">Budget Meeting</div></div>
+                    <div class="day">27</div>
+                    <div class="day">28</div>
+                    <div class="day">29</div>
+                    <div class="day">30<div class="event">Grant Deadline</div></div>
+                </div>
+
+                <h3>May 2025</h3>
+                <div class="calendar">
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5<div class="event">Fundraiser</div></div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+                    <div class="day">9<div class="event">Grant Deadline</div></div>
+                    <div class="day">10</div>
+                    <div class="day">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">15<div class="event">Budget Meeting</div></div>
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class="day">18</div>
+                    <div class="day">19<div class="event">Grant Deadline</div></div>
+                    <div class="day">20</div>
+                    <div class="day">21</div>
+                    <div class="day">22</div>
+                    <div class="day">23</div>
+                    <div class="day">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26<div class="event">Budget Meeting</div></div>
+                    <div class="day">27</div>
+                    <div class="day">28</div>
+                    <div class="day">29</div>
+                    <div class="day">30<div class="event">Grant Deadline</div></div>
+                    <div class="day">31</div>
+                </div>
+                <h3>June 2025</h3>
+                <div class="calendar">
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5<div class="event">Fundraiser</div></div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+                    <div class="day">9<div class="event">Grant Deadline</div></div>
+                    <div class="day">10</div>
+                    <div class="day">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">15<div class="event">Budget Meeting</div></div>
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class="day">18</div>
+                    <div class="day">19<div class="event">Grant Deadline</div></div>
+                    <div class="day">20</div>
+                    <div class="day">21</div>
+                    <div class="day">22</div>
+                    <div class="day">23</div>
+                    <div class="day">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26<div class="event">Budget Meeting</div></div>
+                    <div class="day">27</div>
+                    <div class="day">28</div>
+                    <div class="day">29</div>
+                    <div class="day">30<div class="event">Grant Deadline</div></div>
+                </div>
+
+                <h3>July 2025</h3>
+                <div class="calendar">
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5<div class="event">Fundraiser</div></div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+                    <div class="day">9<div class="event">Grant Deadline</div></div>
+                    <div class="day">10</div>
+                    <div class="day">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">15<div class="event">Budget Meeting</div></div>
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class="day">18</div>
+                    <div class="day">19<div class="event">Grant Deadline</div></div>
+                    <div class="day">20</div>
+                    <div class="day">21</div>
+                    <div class="day">22</div>
+                    <div class="day">23</div>
+                    <div class="day">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26<div class="event">Budget Meeting</div></div>
+                    <div class="day">27</div>
+                    <div class="day">28</div>
+                    <div class="day">29</div>
+                    <div class="day">30<div class="event">Grant Deadline</div></div>
+                    <div class="day">31</div>
+                </div>
+                <h3>August 2025</h3>
+                <div class="calendar">
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5<div class="event">Fundraiser</div></div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+                    <div class="day">9<div class="event">Grant Deadline</div></div>
+                    <div class="day">10</div>
+                    <div class="day">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">15<div class="event">Budget Meeting</div></div>
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class="day">18</div>
+                    <div class="day">19<div class="event">Grant Deadline</div></div>
+                    <div class="day">20</div>
+                    <div class="day">21</div>
+                    <div class="day">22</div>
+                    <div class="day">23</div>
+                    <div class="day">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26<div class="event">Budget Meeting</div></div>
+                    <div class="day">27</div>
+                    <div class="day">28</div>
+                    <div class="day">29</div>
+                    <div class="day">30<div class="event">Grant Deadline</div></div>
+                    <div class="day">31</div>
+                </div>
+                
+                <h3>September 2025</h3>
+                <div class="calendar">
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5<div class="event">Fundraiser</div></div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+                    <div class="day">9<div class="event">Grant Deadline</div></div>
+                    <div class="day">10</div>
+                    <div class="day">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">15<div class="event">Budget Meeting</div></div>
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class="day">18</div>
+                    <div class="day">19<div class="event">Grant Deadline</div></div>
+                    <div class="day">20</div>
+                    <div class="day">21</div>
+                    <div class="day">22</div>
+                    <div class="day">23</div>
+                    <div class="day">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26<div class="event">Budget Meeting</div></div>
+                    <div class="day">27</div>
+                    <div class="day">28</div>
+                    <div class="day">29</div>
+                    <div class="day">30<div class="event">Grant Deadline</div></div>
+                </div>
+
+                <h3>October 2025</h3>
+                <div class="calendar">
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5<div class="event">Fundraiser</div></div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+                    <div class="day">9<div class="event">Grant Deadline</div></div>
+                    <div class="day">10</div>
+                    <div class="day">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">15<div class="event">Budget Meeting</div></div>
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class="day">18</div>
+                    <div class="day">19<div class="event">Grant Deadline</div></div>
+                    <div class="day">20</div>
+                    <div class="day">21</div>
+                    <div class="day">22</div>
+                    <div class="day">23</div>
+                    <div class="day">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26<div class="event">Budget Meeting</div></div>
+                    <div class="day">27</div>
+                    <div class="day">28</div>
+                    <div class="day">29</div>
+                    <div class="day">30<div class="event">Grant Deadline</div></div>
+                    <div class="day">31</div>
+                </div>
+
+                <h3>November 2025</h3>
+                <div class="calendar">
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5<div class="event">Fundraiser</div></div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+                    <div class="day">9<div class="event">Grant Deadline</div></div>
+                    <div class="day">10</div>
+                    <div class="day">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">15<div class="event">Budget Meeting</div></div>
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class="day">18</div>
+                    <div class="day">19<div class="event">Grant Deadline</div></div>
+                    <div class="day">20</div>
+                    <div class="day">21</div>
+                    <div class="day">22</div>
+                    <div class="day">23</div>
+                    <div class="day">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26<div class="event">Budget Meeting</div></div>
+                    <div class="day">27</div>
+                    <div class="day">28</div>
+                    <div class="day">29</div>
+                    <div class="day">30<div class="event">Grant Deadline</div></div>
+                </div>
+                
+                <h3>December 2025</h3>
+                <div class="calendar">
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5<div class="event">Fundraiser</div></div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+                    <div class="day">9<div class="event">Grant Deadline</div></div>
+                    <div class="day">10</div>
+                    <div class="day">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">15<div class="event">Budget Meeting</div></div>
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class="day">18</div>
+                    <div class="day">19<div class="event">Grant Deadline</div></div>
+                    <div class="day">20</div>
+                    <div class="day">21</div>
+                    <div class="day">22</div>
+                    <div class="day">23</div>
+                    <div class="day">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26<div class="event">Budget Meeting</div></div>
+                    <div class="day">27</div>
+                    <div class="day">28</div>
+                    <div class="day">29</div>
+                    <div class="day">30<div class="event">Grant Deadline</div></div>
+                    <div class="day">31</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documents Section -->
+        <div class="documents">
+            <h2>Important Documents</h2>
+            <a href="Agenda 12-16-24.docx" target="_blank">Agenda 12.16.24</a>
+            <a href="Finance Committee Board Report_December 2024.docx" target="_blank">Finance Committee Report 12.24</a>
+            <a href="Minutes 11-18-24.docx" target="_blank">Minutes 11.18.24</a>
+        </div>
+
+    </div>
+</body>
+</html>
